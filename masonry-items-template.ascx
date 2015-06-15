@@ -1,5 +1,13 @@
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.dataTable').DataTable();
+});
+</script>
+
 <xmod:Template UsePaging="True" Ajax="False" AddRoles="" EditRoles="" DeleteRoles="">
-  <ListDataSource CommandText="SELECT [Id], [Title], [Size], [Category], [Color], [Link], [Description], [CallToAction], [Icon] FROM xmod_DUDE_mosaic"/>
+  <ListDataSource CommandText="SELECT [Id], [Title], [Subtitle], [Size], [Category], [Color], [Link], [Description], [CallToAction], [Icon] FROM xmod_DUDE_mosaic"/>
   <DeleteCommand CommandText="DELETE FROM xmod_DUDE_mosaic WHERE [Id] = @Id">
     <Parameter Name="Id" />
   </DeleteCommand>
@@ -10,7 +18,7 @@
     <div>
   <xmod:AddLink Text="New" />
   </div>
-    <table>
+    <table class="dataTable">
       <thead>
         <tr>
           <th>Title</th>
@@ -27,7 +35,7 @@
           <td>[[Title]]</td>
           <td>[[Size]]</td>
           <td>[[Category]]</td>
-          <td>[[Color]]</td>
+          <td style="background:#[[Color]]"></td>
           <td>
             <xmod:EditLink Text="Edit">
               <Parameter Name="Id" Value='[[Id]]' />
