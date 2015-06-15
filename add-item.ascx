@@ -15,7 +15,8 @@
 
 
   <SubmitCommand CommandText="INSERT INTO [xmod_DUDE_mosaic] (
-                              [Title], 
+                              [Title],
+                              [Subtitle],
                               [Size], 
                               [Category], 
                               [Color], 
@@ -27,6 +28,7 @@
                               
                               VALUES(
                               @Title, 
+                              @Subtitle,
                               @Size, 
                               @Category, 
                               @Color, 
@@ -59,6 +61,10 @@
     <Label For="Title" Text="Title" CssClass="NormalBold xmp-form-label" />
     <TextBox id="Title" DataField="Title" DataType="string" Width="400" Nullable="True" />
   </div>
+   <div class="xmp-form-row">
+    <Label For="Subtitle" Text="Subtitle" CssClass="NormalBold xmp-form-label" />
+    <TextBox id="Subtitle" DataField="Subtitle" DataType="string" Width="400" Nullable="True" />
+  </div>
   <div class="xmp-form-row">
     <Label For="Size" Text="Size" CssClass="NormalBold xmp-form-label" />
     <RadioButtonList Id="Size" DataField="Size" SelectedItemsSeparator="|">
@@ -82,7 +88,7 @@
     <TextBox id="Link" DataField="Link" DataType="string" Width="400" Nullable="True" />
   </div>
   <div class="xmp-form-row">
-    <Label For="Description" Text="Description" CssClass="NormalBold xmp-form-label" />
+    <Label For="Description" Text="Description (not shown on 1x1)" CssClass="NormalBold xmp-form-label" />
     <TextArea id="Description" DataField="Description" DataType="string" Height="200" Width="400" Nullable="True" />
   </div>
   <div class="xmp-form-row">
@@ -90,8 +96,8 @@
     <TextBox id="CallToAction" DataField="CallToAction" DataType="string" Width="400" Nullable="True" />
   </div>
   <div class="xmp-form-row">
-    <Label For="Icon" Text="Icon" CssClass="NormalBold xmp-form-label" />
-    <FileUpload Id="Icon" DataField="Icon" DataType="String" DisplayMode="FilePicker" Path="/Portals/0/Images/DUDE/Mosaic/"></FileUpload>
+    <Label For="Icon" Text="Icon (not shown on 1x1)" CssClass="NormalBold xmp-form-label" />
+    <FileUpload Id="Icon" DataField="Icon" DataType="String" DisplayMode="FilePicker" extensions="jpg,gif,png" uploaddirectory="/Portals/0/Images/DUDE/Mosaic/" uploadonce="True"></FileUpload>
 
   </div>
   <div class="kbxmFormRow">
